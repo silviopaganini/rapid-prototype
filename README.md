@@ -7,4 +7,5 @@ by @mattdesl
 git clone 
 npm install 
 npm run start
+http://localhost:9966
 ```
