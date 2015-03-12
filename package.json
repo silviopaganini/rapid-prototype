@@ -4,7 +4,7 @@
   "description": "based on @mattdesl tuto",
   "main": "index.js",
   "repository": {
-    "git" : "https://github.com/silviopaganini/rapid-prototype"
+    "git": "https://github.com/silviopaganini/rapid-prototype"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,6 +14,7 @@
   "author": "silvio paganini | @silviopaganini",
   "license": "ISC",
   "devDependencies": {
+    "browserify": "^9.0.3",
     "budo": "^1.2.0",
     "garnish": "^2.1.0",
     "three": "^0.70.0",
