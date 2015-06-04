@@ -1,25 +1,18 @@
 {
-  "name": "rapid-prototype",
-  "version": "1.0.0",
-  "description": "based on @mattdesl tuto",
+  "name": "rapid-prototyping",
+  "version": "1.0.1",
+  "description": "",
   "main": "index.js",
-  "repository": {
-    "git": "https://github.com/silviopaganini/rapid-prototype"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "budo demo.js -v --live -o bundle.js | garnish",
+    "start": "budo demo.js:bundle.js -v --live | garnish",
     "build": "browserify demo.js | uglifyjs -cm > bundle.js"
   },
   "author": "silvio paganini | @silviopaganini",
   "license": "ISC",
   "devDependencies": {
-    "browserify": "^9.0.3",
-    "budo": "^1.2.0",
-    "garnish": "^2.1.0",
-    "three": "^0.70.0",
-    "three-orbit-viewer": "^69.2.9",
-    "uglify-js": "^2.4.16",
-    "watchify": "^2.4.0"
+    "budo": "^4.0.0",
+    "garnish": "^2.1.3",
+    "watchify": "^3.2.1"
   }
 }
