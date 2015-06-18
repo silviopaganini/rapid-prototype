@@ -1,6 +1,6 @@
 {
   "name": "rapid-prototyping",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,6 @@
     "garnish": "^2.1.3",
     "three": "^0.71.0",
     "three-orbit-controls": "^69.0.4",
-    "watchify": "^3.2.1",
+    "watchify": "^3.2.1"
   }
 }
