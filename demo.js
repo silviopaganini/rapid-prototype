@@ -1,6 +1,10 @@
 var THREE         = require('three');
 var OrbitControls = require('three-orbit-controls')(THREE);
-var dat = require('dat-gui');
+var dat           = require('dat-gui');
+var Stats         = require('stats-js');
+
+var stats = new Stats(); stats.domElement.style.position = 'absolute';
+document.body.appendChild(stats.domElement);
 
 var renderer, camera, scene;
 var counter = 0;
@@ -20,10 +24,12 @@ scene = new THREE.Scene();
 
 function update()
 {
-    for (var i = lines.length - 1; i >= 0; i--) {
-        lines[i].update( audioAnalyser.frequencies() );
-    }
+    stats.begin();
+
+
     renderer.render(scene, camera);
+    stats.end()
+    
     requestAnimationFrame(update);
 }
 
