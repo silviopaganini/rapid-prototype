@@ -19,7 +19,8 @@ function rapid
         git clone git@github.com:silviopaganini/rapid-prototype.git .
         
         # renames package.json
-        (echo "import json, sys";echo "with open('package.json', 'r+') as f:";echo "    data = json.load(f)";echo "    data['name'] = '$1'";echo "    data['version'] = '0.0.1'";echo "    f.seek(0)";echo "    json.dump(data, f, indent=4)") | python
+        USR="$(git config --global user.name)"
+        (echo "import json, sys";echo "with open('package.json', 'r+') as f:";echo "    data = json.load(f)";echo "    data['name'] = '$1'";echo "    data['author'] = '$USR'";echo "    data['version'] = '0.0.1'";echo "    f.seek(0)";echo "    json.dump(data, f, indent=4)") | python
 
         # generate README file
         rm README.md 
