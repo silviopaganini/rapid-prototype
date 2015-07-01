@@ -20,6 +20,13 @@ function rapid
         
         # renames package.json
         (echo "import json, sys";echo "with open('package.json', 'r+') as f:";echo "    data = json.load(f)";echo "    data['name'] = '$1'";echo "    data['version'] = '0.0.1'";echo "    f.seek(0)";echo "    json.dump(data, f, indent=4)") | python
+
+        # generate README file
+        rm README.md 
+        touch README.md 
+        printf "# $1 \n\n Description of your prototype \n Usage: \n\n \`npm start\`" >> README.md
+
+        # remove rapid prototype git references
         rm -rf .git
         
         # install dependencies
