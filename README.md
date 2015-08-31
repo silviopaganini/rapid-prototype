@@ -1,7 +1,16 @@
 ### Rapid Prototyping boilerplate
-using @mattdesl template
 
-Using ES6 and babel transform
+Using ES6 and babelify transform
+
+#### Dependencies
+* babelify
+* budo
+* dat-gui
+* garnish
+* stats-js
+* three
+* three-orbit-controls
+* watchify
 
 if you want to make this completely automated on your machine place this script on your .bash_profile 
 
@@ -57,3 +66,6 @@ git clone
 npm install 
 npm start
 ```
+
+### credits 
+[@mattdesl](https://github.com/mattdesl)
