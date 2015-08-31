@@ -1,6 +1,8 @@
 ### Rapid Prototyping boilerplate
 using @mattdesl template
 
+Using ES6 and babel transform
+
 if you want to make this completely automated on your machine place this script on your .bash_profile 
 
 ``` 
