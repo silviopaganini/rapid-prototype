@@ -13,6 +13,7 @@ class Demo {
     this.camera   = null;
     this.scene    = null;
     this.counter  = 0;
+    this.clock    = new THREE.Clock();
 
     this.createRender();
     this.createScene();
