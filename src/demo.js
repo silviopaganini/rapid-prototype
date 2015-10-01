@@ -1,7 +1,8 @@
 import THREE from 'three.js'; 
-import OC    from 'three-orbit-controls';
 import dat   from 'dat-gui' ;
 import Stats from 'stats-js' ;
+
+const OrbitControls = require('three-orbit-controls')(THREE);
 
 class Demo {
   constructor(args) 
@@ -41,8 +42,6 @@ class Demo {
 
   createScene()
   {
-    const OrbitControls = OC(THREE);
-
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 4000 );
     this.camera.position.set(0, 45, 240);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
