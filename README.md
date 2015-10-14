@@ -14,6 +14,8 @@ Using ES6 and babelify transform
 
 ## Rapid proto command line tool 
 
+[![npm version](https://badge.fury.io/js/rapid-proto.svg)](https://badge.fury.io/js/rapid-proto)
+
 #### Install 
 
 Need to install globally in order to have the command available everywhere.
