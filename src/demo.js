@@ -7,17 +7,18 @@ const OrbitControls = require('three-orbit-controls')(THREE);
 class Demo {
   constructor(args) 
   {
-    this.startStats();
-    this.startGUI();
-
     this.renderer = null;
     this.camera   = null;
     this.scene    = null;
     this.counter  = 0;
+    this.gui      = null;
     this.clock    = new THREE.Clock();
+    this.DEBUG    = false;
 
+    this.startStats();
     this.createRender();
     this.createScene();
+    this.startGUI();
     this.addObjects();
 
     this.onResize();
@@ -28,7 +29,12 @@ class Demo {
   {
     this.stats = new Stats(); 
     this.stats.domElement.style.position = 'absolute';
+    this.stats.domElement.style.top = 0;
+    this.stats.domElement.style.display = this.DEBUG ? 'block' : 'none';
+    this.stats.domElement.style.left = 0;
+    this.stats.domElement.style.zIndex = 50;
     document.body.appendChild(this.stats.domElement);
+    document.querySelector('.help').style.display = this.stats.domElement.style.display == 'block' ? "none" : "block";
   }
 
   createRender()
@@ -58,10 +64,14 @@ class Demo {
 
   startGUI()
   {
-    // var gui = new dat.GUI()
-    // gui.add(camera.position, 'x', 0, 400)
-    // gui.add(camera.position, 'y', 0, 400)
-    // gui.add(camera.position, 'z', 0, 400)
+    this.gui = new dat.GUI()
+    this.gui.domElement.style.display = this.DEBUG ? 'block' : 'none';
+
+    let cameraFolder = this.gui.addFolder('Camera');
+    cameraFolder.add(this.camera.position, 'x', -400, 400);
+    cameraFolder.add(this.camera.position, 'y', -400, 400);
+    cameraFolder.add(this.camera.position, 'z', -400, 400);
+    
   }
 
   update()
@@ -72,6 +82,24 @@ class Demo {
 
     this.stats.end()
     requestAnimationFrame(this.update.bind(this));
+  }
+
+  /*
+  events
+  */
+
+  onKeyUp(e)
+  {
+    let key = e.which || e.keyCode;
+    switch(key)
+    {
+      // leter D
+      case 68:
+        this.stats.domElement.style.display = this.stats.domElement.style.display == 'block' ? "none" : "block";
+        this.gui.domElement.style.display = this.gui.domElement.style.display == 'block' ? "none" : "block";
+        document.querySelector('.help').style.display = this.gui.domElement.style.display == 'block' ? "none" : "block";
+        break;
+    }
   }
 
   onResize()
