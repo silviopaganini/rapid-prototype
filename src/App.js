@@ -5,7 +5,7 @@ import Stats from 'stats-js' ;
 const OrbitControls = require('three-orbit-controls')(THREE);
 const glslify       = require('glslify');
 
-class Demo {
+class App {
   constructor(args) 
   {
     this.renderer = null;
@@ -129,4 +129,4 @@ class Demo {
   }
 }
 
-export default Demo;
+export default App;

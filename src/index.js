@@ -1,5 +1,5 @@
-import Demo from './demo';
+import App from './App';
 
-const demo = new Demo();
-window.onresize = demo.onResize.bind(demo);
-window.onkeyup = demo.onKeyUp.bind(demo);
+const app = new App();
+window.onresize = app.onResize.bind(app);
+window.onkeyup = app.onKeyUp.bind(app);
