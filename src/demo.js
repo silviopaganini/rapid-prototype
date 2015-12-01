@@ -16,10 +16,10 @@ class Demo {
     this.clock    = new THREE.Clock();
     this.DEBUG    = false;
     this.SIZE     = {
-      w : window.innerWidth , 
+      w  : window.innerWidth , 
       w2 : window.innerWidth / 2, 
-      h: window.innerHeight,
-      h2: window.innerHeight / 2
+      h  : window.innerHeight,
+      h2 : window.innerHeight / 2
     };
 
     this.startStats();
@@ -67,6 +67,11 @@ class Demo {
   {
     let gridHelper = new THREE.GridHelper( 100, 10 );        
     this.scene.add( gridHelper );
+
+    this.shader = new THREE.ShaderMaterial({
+      vertexShader : glslify('./glsl/basic_vert.glsl'),
+      fragmentShader : glslify('./glsl/basic_frag.glsl'),
+    })
   }
 
   startGUI()
@@ -112,10 +117,10 @@ class Demo {
   onResize()
   {
     this.SIZE = {
-      w : window.innerWidth , 
+      w  : window.innerWidth , 
       w2 : window.innerWidth / 2, 
-      h: window.innerHeight,
-      h2: window.innerHeight / 2
+      h  : window.innerHeight,
+      h2 : window.innerHeight / 2
     };
 
     this.renderer.setSize(window.innerWidth, window.innerHeight);
