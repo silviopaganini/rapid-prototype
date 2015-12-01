@@ -58,6 +58,7 @@ class App {
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 4000 );
     this.camera.position.set(0, 45, 240);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.enabled = this.DEBUG;
     this.controls.maxDistance = 500;
 
     this.scene = new THREE.Scene();
@@ -107,9 +108,11 @@ class App {
     {
       // leter D
       case 68:
-        this.stats.domElement.style.display = this.stats.domElement.style.display == 'block' ? "none" : "block";
-        this.gui.domElement.style.display = this.gui.domElement.style.display == 'block' ? "none" : "block";
-        document.querySelector('.help').style.display = this.gui.domElement.style.display == 'block' ? "none" : "block";
+        this.DEBUG = !this.DEBUG;
+        this.stats.domElement.style.display = !this.DEBUG ? "none" : "block";
+        this.gui.domElement.style.display = !this.DEBUG ? "none" : "block";
+        this.controls.enabled = this.DEBUG;
+        document.querySelector('.help').style.display = this.DEBUG ? "none" : "block";
         break;
     }
   }
