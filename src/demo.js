@@ -3,6 +3,7 @@ import dat   from 'dat-gui' ;
 import Stats from 'stats-js' ;
 
 const OrbitControls = require('three-orbit-controls')(THREE);
+const glslify       = require('glslify');
 
 class Demo {
   constructor(args) 
@@ -14,6 +15,12 @@ class Demo {
     this.gui      = null;
     this.clock    = new THREE.Clock();
     this.DEBUG    = false;
+    this.SIZE     = {
+      w : window.innerWidth , 
+      w2 : window.innerWidth / 2, 
+      h: window.innerHeight,
+      h2: window.innerHeight / 2
+    };
 
     this.startStats();
     this.createRender();
@@ -58,7 +65,7 @@ class Demo {
 
   addObjects()
   {
-    var gridHelper = new THREE.GridHelper( 100, 10 );        
+    let gridHelper = new THREE.GridHelper( 100, 10 );        
     this.scene.add( gridHelper );
   }
 
@@ -104,6 +111,13 @@ class Demo {
 
   onResize()
   {
+    this.SIZE = {
+      w : window.innerWidth , 
+      w2 : window.innerWidth / 2, 
+      h: window.innerHeight,
+      h2: window.innerHeight / 2
+    };
+
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
