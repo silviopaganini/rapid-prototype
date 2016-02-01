@@ -14,7 +14,9 @@ Using ES6 and babelify transform
 
 ## Rapid proto command line tool 
 
-[![npm version](https://badge.fury.io/js/rapid-proto.svg)](https://badge.fury.io/js/rapid-proto)
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+[![js-standard-style][standard-image]][standard-url]
 
 #### Install 
 
@@ -42,3 +44,9 @@ npm start
 
 ### credits 
 [@mattdesl](https://github.com/mattdesl)
+
+[npm-image]: https://img.shields.io/npm/v/rapid-proto.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/rapid-proto
+[downloads-image]: http://img.shields.io/npm/dm/rapid-proto.svg?style=flat-square
+[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
+[standard-url]: https://github.com/feross/standard
