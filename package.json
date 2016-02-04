@@ -29,6 +29,6 @@
     "dat-gui": "^0.5.0",
     "stats-js": "^1.0.0-alpha1",
     "three-orbit-controls": "^72.0.0",
-    "three.js": "^0.73.2"
+    "three": "^0.73.2"
   }
 }
