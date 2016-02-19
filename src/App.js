@@ -1,6 +1,6 @@
 import dat from 'dat-gui'
 import Stats from 'stats-js'
-import THREE from 'three.js'
+import THREE from 'three'
 
 const OrbitControls  = require('three-orbit-controls')(THREE);
 const glslify        = require('glslify');
