@@ -97,8 +97,12 @@ class App {
 
   createScene()
   {
+    // OrthographicCamera
+    // this.camera = new THREE.OrthographicCamera( this.SIZE.w / - 2, this.SIZE.w / 2, this.SIZE.h / 2, this.SIZE.h / - 2, 1, 1000 );
+
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 4000 );
     this.camera.position.set(0, 40, 200);
+
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enabled = this.DEBUG;
     this.controls.maxDistance = 500;
@@ -179,6 +183,12 @@ class App {
       h  : window.innerHeight,
       h2 : window.innerHeight / 2
     };
+
+    // OrthographicCamera
+    // this.camera.left = this.SIZE.w / - 2;
+		// this.camera.right = this.SIZE.w / 2;
+		// this.camera.top = this.SIZE.h / 2;
+		// this.camera.bottom = this.SIZE.h / - 2;
 
     this.renderer.setSize(this.SIZE.w, this.SIZE.h);
     this.camera.aspect = this.SIZE.w / this.SIZE.h;
